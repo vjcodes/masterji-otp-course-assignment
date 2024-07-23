@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import OtpPage from "./pages/OtpPage"
+import CourseListPage from "./pages/CourseListPage"
 
 const router = createBrowserRouter([
   // {
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
   {
     path: '/otp-form',
     element: <OtpPage />
+  },
+  {
+    path: '/course-list',
+    element: <CourseListPage />
   },
   {
     path: '*',
