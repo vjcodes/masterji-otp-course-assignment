@@ -9,10 +9,18 @@ import arrowRightDisabled from "./../../public/static/images/right-arrow-disable
 const BatchesComponent = () => {
   const [rows, setRows] = useState(10);
   const [page, setPage] = useState(0);
+  const [searchvalue, setSearchValue] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+  };
 
   const tableRows = useMemo(() => {
-    return COURSES.slice(rows * page, rows * page + rows);
-  }, [rows, page]);
+    const filteredCourses = COURSES.filter((course) =>
+      course.title.toLowerCase().includes(searchvalue.toLowerCase().trim())
+    );
+    return filteredCourses.slice(rows * page, rows * page + rows);
+  }, [rows, page, searchvalue]);
 
   const isBackDisabled = () => {
     return page - 1 < 0;
@@ -34,6 +42,7 @@ const BatchesComponent = () => {
           type="text"
           placeholder="Search by Title (alt+k or cmd+k)"
           className="border pr-20 pl-2 py-2 w-[30%] rounded-md mr-2"
+          onChange={handleSearch}
         />
 
         <button className="bg-[#6C6BAF] px-6 py-2 text-white rounded-md">
