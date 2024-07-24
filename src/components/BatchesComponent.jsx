@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { COURSES, TABLE_HEADERS } from "../constants";
+import courseImg from './../../public/static/images/courseImg.png'
 
 const BatchesComponent = () => {
   const [rows, setRows] = useState(10);
@@ -65,7 +66,7 @@ const BatchesComponent = () => {
                 <div className="flex items-center">
                   <div className="w-1/4">
                     <img
-                      src="public/static/images/courseImg.png"
+                      src={courseImg}
                       className="w-full h-full rounded-lg"
                     />
                   </div>
