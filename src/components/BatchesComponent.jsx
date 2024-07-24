@@ -1,6 +1,10 @@
 import { useMemo, useState } from "react";
 import { COURSES, TABLE_HEADERS } from "../constants";
-import courseImg from './../../public/static/images/courseImg.png'
+import courseImg from "./../../public/static/images/courseImg.png";
+import arrowLeft from "./../../public/static/images/arrow-left.svg";
+import arrowLeftDisabled from "./../../public/static/images/arrow-left-disabled.svg";
+import arrowRight from "./../../public/static/images/right-arrow.svg";
+import arrowRightDisabled from "./../../public/static/images/right-arrow-disabled.svg";
 
 const BatchesComponent = () => {
   const [rows, setRows] = useState(10);
@@ -65,10 +69,7 @@ const BatchesComponent = () => {
               <td className="p-6">
                 <div className="flex items-center">
                   <div className="w-1/4">
-                    <img
-                      src={courseImg}
-                      className="w-full h-full rounded-lg"
-                    />
+                    <img src={courseImg} className="w-full h-full rounded-lg" />
                   </div>
 
                   <div className="ml-4 text-left">
@@ -93,9 +94,9 @@ const BatchesComponent = () => {
             onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
           >
             {isBackDisabled() ? (
-              <img src="public/static/images/arrow-left-disabled.svg" />
+              <img src={arrowLeftDisabled} />
             ) : (
-              <img src="public/static/images/arrow-left.svg" />
+              <img src={arrowLeft} />
             )}
           </button>
           <button
@@ -107,9 +108,9 @@ const BatchesComponent = () => {
             className="p-1 w-16 h-16"
           >
             {isForwardDisabled() ? (
-              <img src="public/static/images/right-arrow-disabled.svg" />
+              <img src={arrowRightDisabled} />
             ) : (
-              <img src="public/static/images/right-arrow.svg" />
+              <img src={arrowRight} />
             )}
           </button>
         </div>
