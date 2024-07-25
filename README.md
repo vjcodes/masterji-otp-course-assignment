@@ -6,7 +6,7 @@ This Web App Consisits of 3 Pages:
 3. Batches Page (route: '/batches)
 
 ## Deployed URL
-https://masterji-otp-course-assignment-1iked5kpr.vercel.app/
+[https://masterji-otp-course-assignment-1iked5kpr.vercel.app/](https://masterji-otp-course-assignment-8dxkxo1kg.vercel.app/)
 
 ## Screenshots of Pages
 
