@@ -5,6 +5,7 @@ import arrowLeft from "./../../public/static/images/arrow-left.svg";
 import arrowLeftDisabled from "./../../public/static/images/arrow-left-disabled.svg";
 import arrowRight from "./../../public/static/images/right-arrow.svg";
 import arrowRightDisabled from "./../../public/static/images/right-arrow-disabled.svg";
+import { COLORS } from "../colors";
 
 const BatchesComponent = () => {
   const [rows, setRows] = useState(10);
@@ -90,7 +91,17 @@ const BatchesComponent = () => {
               <td>{course.endDate}</td>
               <td>₹ {course.price}</td>
               <td>{course.validity}</td>
-              <td>{course.isPublished ? "Published" : "Unpublished"}</td>
+              <td>
+                <span
+                  style={{
+                    background: course?.isPublished? COLORS.chipGreen: COLORS.grayBackground,
+                    border: `1px solid ${course?.isPublished? COLORS.greenBorder: COLORS.grayBorder}`,
+                  }}
+                  className="px-3 py-2 rounded-md"
+                >
+                  {course.isPublished ? "Published" : "Unpublished"}
+                </span>
+              </td>
             </tr>
           ))}
         </table>
