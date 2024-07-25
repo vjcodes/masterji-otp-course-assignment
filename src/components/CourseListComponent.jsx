@@ -13,14 +13,10 @@ const CourseListComponent = () => {
 
   const removeItem = (id) => {
     let tempCourses = [...courses];
-    console.log(courses)
-    console.log(tempCourses)
     tempCourses.splice(id, 1);
-    console.log(tempCourses)
     setCourses(tempCourses);
   };
   const moveToTop = (id) => {
-    console.log(courses);
     let tempCourses = [...courses];
     let [ele] = tempCourses.splice(id, 1);
     tempCourses.unshift(ele);
